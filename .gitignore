@@ -2,6 +2,7 @@
 Autodesk/*
 Code/*
 Kite/*
+README.md
 autostart/*
 caja/*
 cinnamon-monitors.xml
@@ -27,7 +28,6 @@ i3status/*
 inkscape/*
 iterm2/*
 karabiner/*
-kitty/*
 lvim.bak/*
 lvim/*
 mc/*
@@ -35,8 +35,6 @@ mimeapps.list
 monitors.xml
 nautilus/*
 nemo/*
-nvim.old/*
-nvim/*
 nvim/undodir/*
 oh-my-zsh/*
 p10k/*
@@ -44,7 +42,6 @@ pulse/*
 qt5ct/*
 rstudio/*
 setup.sh
-sublime-text-3/*
 synapse/*
 systemd/*
 user-dirs.dirs
@@ -54,4 +51,3 @@ xbuild/*
 xm1/*
 yarn/*
 zed/*
-README.md
