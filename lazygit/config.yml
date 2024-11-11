@@ -1,0 +1,12 @@
+# Config relating to the Lazygit UI
+gui:
+  # Nerd fonts version to use.
+  # One of: '2' | '3' | empty string (default)
+  # If empty, do not show icons.
+  nerdFontsVersion: "3"
+
+# Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
+os:
+  # A built-in preset that sets all of the above settings. Supported presets
+  # are defined in the getPreset function in editor_presets.go.
+  editPreset: "nvim"

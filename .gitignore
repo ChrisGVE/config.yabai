@@ -58,3 +58,7 @@ github-copilot
 op
 packer
 nvim/lazy-lock.json
+zsh/.zsh_sessions
+zsh/.zcompdump*
+zsh/.zsh_history
+.DS_Store
