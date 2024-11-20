@@ -62,3 +62,4 @@ zsh/.zsh_sessions
 zsh/.zcompdump*
 zsh/.zsh_history
 .DS_Store
+wezterm/color-ref.lua
