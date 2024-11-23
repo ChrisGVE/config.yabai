@@ -52,7 +52,6 @@ xm1/*
 yarn/*
 zed/*
 nvim/lazy-lock.json
-btop
 gh
 github-copilot
 op
