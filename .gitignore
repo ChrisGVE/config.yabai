@@ -64,3 +64,4 @@ zsh/.zsh_history
 .DS_Store
 wezterm/color-ref.lua
 wezterm/example
+kitty/my-kitty-config
