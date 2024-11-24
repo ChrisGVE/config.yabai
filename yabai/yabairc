@@ -52,5 +52,6 @@ yabai -m rule --add label="CitrixWS" app='^Citrix Workspace$' manage=off
 yabai -m rule --add label="CitrixV" app='^Citrix Viewer$' manage=off
 yabai -m rule --add label="TradingView" app='^TradingView$' manage=off
 yabai -m rule --add label="PathFinder" app='^Path Finder$' manage=off
+yabai -m rule --add labal="CleanMyMac" app="^CleanMyMac$" manage=off
 
 echo "yabai configuration loaded.."
