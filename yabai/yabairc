@@ -14,7 +14,7 @@
 # global settings
 yabai -m config \
   active_window_opacity 1.0 \
-  auto_balance on \
+  auto_balance off \
   bottom_padding 12 \
   debug_output on \
   display_arrangement_order default \
@@ -27,7 +27,7 @@ yabai -m config \
   mouse_action1 move \
   mouse_action2 resize \
   mouse_drop_action swap \
-  mouse_follows_focus off \
+  mouse_follows_focus on \
   mouse_modifier fn \
   normal_window_opacity 0.90 \
   right_padding 12 \
