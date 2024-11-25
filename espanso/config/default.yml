@@ -41,3 +41,7 @@
 #
 
 show_notifications: false
+
+# Search shortcut
+search_shortcut: off
+# search_shortcut: ALT+SHIFT+SPACE
