@@ -1,5 +1,9 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
+[exec]
+inherit-env.vars = true
+[exec.env-vars]
+PATH = '${HOME}/bin:/usr/local/bin:${PATH}'
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -9,10 +13,13 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-  # 'exec-and-forget /usr/local/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
-  # "exec-and-forget borders",
-  'exec-and-forget /usr/local/bin/borders style=round width=6.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550',
+after-startup-command = ['exec-and-forget sketchybar']
+
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  'borders style=round width=6.0 hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 # Start AeroSpace at login
@@ -25,7 +32,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 300
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -61,12 +68,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 12
-inner.vertical = 12
-outer.left = 12
-outer.bottom = 12
-outer.top = 12
-outer.right = 12
+inner.horizontal = 40
+inner.vertical = 40
+outer.left = 40
+outer.bottom = 40
+outer.top = 40
+outer.right = 80
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -187,6 +194,74 @@ if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.shortcuts'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AddressBook'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Console'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.DiskUtility'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.findmy'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.PhotoBooth'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.podcasts'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.TV'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.audio.AudioMIDISetup'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.SFSymbols'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.citrix.receiver.nomas'
 run = 'layout floating'
 
@@ -208,4 +283,56 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.cocoatech.PathFinder-setapp'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.daisydiskapp.DaisyDiskStandAlone'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'imaccatalyst.com.inomma.coinstats'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.parallels.desktop.console'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.parallels.*'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.whatsapp.WhatsApp'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'fm.qmk.toolbox'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.flexibits.cardhop.mac'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.objective-see.lulu.app'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.devon-technologies.agent'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-EventViewer'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.econtechnologies.chronosync'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'uk.co.tla-systems.pcalc'
 run = 'layout floating'
