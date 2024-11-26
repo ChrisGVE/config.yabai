@@ -336,3 +336,7 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'uk.co.tla-systems.pcalc'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.macpaw.CleanMyMac-setapp'
+run = 'layout floating'
