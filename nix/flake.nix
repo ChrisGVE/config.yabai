@@ -19,9 +19,29 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    whalebrew = {
+      url = "github:whalebrew/whalebrew";
+      flake = false;
+    };
+    # SFMono w/ patches
+    sf-mono-liga-src = {
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, ... }:
+  outputs =
+    inputs@{ self
+    , nix-darwin
+    , nixpkgs
+    , nix-homebrew
+    , homebrew-core
+    , homebrew-cask
+    , homebrew-bundle
+    , whalebrew
+    , sf-mono-liga-src
+    }:
+
     let
       configuration = { pkgs, config, ... }: {
 
@@ -29,89 +49,198 @@
 
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
-        environment.systemPackages =
+        environment.systemPackages = with pkgs;
           [
-            # pkgs.conda
-            pkgs._1password
-            pkgs.ast-grep
-            pkgs.automake
-            pkgs.bat
-            pkgs.btop
-            pkgs.cargo
-            pkgs.cmake
-            pkgs.curl
-            pkgs.deno
-            pkgs.direnv
-            pkgs.discord
-            pkgs.docker
-            pkgs.docutils
-            pkgs.espanso
-            pkgs.fd
-            pkgs.fzf
-            pkgs.fzy
-            pkgs.gcc-arm-embedded
-            pkgs.gh
-            pkgs.git
-            pkgs.gitui
-            pkgs.glow
-            pkgs.gnused
-            pkgs.go
-            pkgs.httrack
-            pkgs.hub
-            pkgs.kitty
-            pkgs.lazygit
-            pkgs.man
-            pkgs.mkalias
-            pkgs.mosh
-            pkgs.multitail
-            pkgs.neovim
-            pkgs.nodejs_22
-            pkgs.obsidian
-            pkgs.ocaml
-            pkgs.oh-my-zsh
-            pkgs.opam
-            pkgs.pandoc
-            pkgs.perl
-            pkgs.pipx
-            pkgs.pnpm
-            pkgs.pyenv
-            pkgs.python311
-            pkgs.python312
-            pkgs.python313
-            pkgs.reattach-to-user-namespace
-            pkgs.rustc
-            pkgs.sketchybar
-            pkgs.sphinx
-            # pkgs.terraform
-            pkgs.tmux
-            pkgs.tree
-            pkgs.universal-ctags
-            pkgs.viu
-            pkgs.yarn
-            pkgs.yazi
-            pkgs.zoxide
-            pkgs.zsh
-            pkgs.zsh-syntax-highlighting
+            # conda
+            _1password
+            # _1password-gui
+            ast-grep
+            automake
+            bat
+            btop
+            cargo
+            cmake
+            curl
+            deno
+            direnv
+            # discord
+            docker
+            docutils
+            espanso
+            fd
+            fzf
+            fzy
+            gcc-arm-embedded
+            gh
+            git
+            gitui
+            glow
+            gnused
+            go
+            httrack
+            hub
+            kitty
+            lazygit
+            man
+            mkalias
+            mosh
+            multitail
+            neovim
+            nodejs_22
+            obsidian
+            ocaml
+            oh-my-zsh
+            opam
+            pandoc
+            perl
+            pipx
+            pnpm
+            pyenv
+            python311
+            python312
+            python313
+            reattach-to-user-namespace
+            rustc
+            sketchybar
+            sphinx
+            # terraform
+            tmux
+            tree
+            universal-ctags
+            viu
+            yarn
+            yazi
+            zoxide
+            zsh
+            zsh-syntax-highlighting
+            zed
           ];
 
         homebrew = {
           enable = true;
+          taps = [
+            "nikitabobko/tap"
+            "FelixKratz/formulae"
+          ];
           brews = [
             "mas"
+            "borders"
+            "sketchybar"
+            "whalebrew"
           ];
           casks = [
-            # "felixkratz/formulae/borders"
+            "font-sketchybar-app-font" # Required for sketchybar
             "aerospace"
+            "qmk-toolbox"
+            "only-switch"
+            "sf-symbols"
+            "miniconda"
           ];
           masApps = {
+            "1Password for Safari" = 1569813296;
+            "Actions" = 1586435171;
+            "AdBlock Pro" = 1018301773;
+            "AdGuard for Safari" = 1440147259;
+            "Aiko" = 1672085276;
+            "AudioBookBinder" = 413969927;
+            "Audiobook Wizard" = 460967298;
+            "Cardhop" = 1290358394;
+            "Cheatsheet" = 1468213484;
+            "Cityscapes" = 1631153096;
+            "CleanMyDrive 2" = 523620159;
+            "Coin Stats" = 1498417304;
+            "Darkroom" = 953286746;
+            "Data Jar" = 1453273600;
+            "Deliveries" = 924726344;
+            "Developer" = 640199958;
+            "Disk Speed Test" = 425264550;
+            "Encrypto" = 935235287;
+            "Fantastical" = 975937182;
+            "Focus" = 777233759;
+            "Goodnotes" = 1444383602;
+            "Grammarly for Safari" = 1462114288;
+            "Ground News" = 1324203419;
+            "HP Smart" = 1474276998;
+            "Keynote" = 409183694;
+            "Kiwix" = 997079563;
+            "Live Wallpaper" = 531123879;
+            "Menu Box" = 6463440793;
+            "NordVPN" = 905953485;
             "Notability" = 360593530;
+            "Numbers" = 409203825;
+            "OneDrive" = 823766827;
+            "PCalc" = 403504866;
+            "Pages" = 409201541;
+            "PayPal Honey" = 1472777122;
+            "Photomator" = 1444636541;
+            "Reeder" = 6475002485;
+            "Save to Medium" = 1485294824;
+            "Shazam" = 897118787;
+            "Shortery" = 1594183810;
+            "ShutterCount" = 720123827;
+            "SimpleumSafe" = 1547771496;
+            "Slack" = 803453959;
+            "Speedtest" = 1153157709;
+            "Texifier" = 458866234;
+            "The Unarchiver" = 425424353;
+            "Tot" = 1491071483;
+            "Userscripts-Map-App" = 1463298887;
+            "WhatsApp" = 310633997;
+            "Xcode" = 497799835;
+            "iA Writer" = 775737590;
+            "iMovie" = 408981434;
           };
           onActivation.cleanup = "zap";
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
         };
 
-        fonts.packages = [
-          (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-        ];
+        fonts.packages = with pkgs; ([
+          sf-mono-liga-bin
+        ]) ++ (
+
+          with pkgs.nerd-fonts; [
+            bigblue-terminal
+            caskaydia-cove
+            caskaydia-mono
+            comic-shanns-mono
+            dejavu-sans-mono
+            envy-code-r
+            fira-code
+            fira-mono
+            hack
+            im-writing
+            inconsolata
+            inconsolata-go
+            iosevka
+            iosevka-term
+            iosevka-term-slab
+            jetbrains-mono
+            lilex
+            meslo-lg
+            open-dyslexic
+            sauce-code-pro
+            symbols-only
+            victor-mono
+            zed-mono
+          ]
+        );
+
+        nixpkgs.overlays =
+          [
+            (final: prev: {
+              sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
+                pname = "sf-mono-liga-bin";
+                version = "dev";
+                src = inputs.sf-mono-liga-src;
+                dontConfigure = true;
+                installPhase = ''
+                  mkdir -p $out/share/fonts/opentype
+                  cp -R $src/*.otf $out/share/fonts/opentype/
+                '';
+              };
+            })
+          ];
 
         system.activationScripts.applications.text =
           let
@@ -134,6 +263,15 @@
             done
           '';
 
+        system.defaults = {
+          dock.autohide = true;
+          dock.persistent-apps = [
+            # "/System/Applications/Finder.app"
+          ];
+          loginwindow.GuestEnabled = false;
+          NSGlobalDomain.AppleInterfaceStyle = "Dark";
+        };
+
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
 
@@ -154,7 +292,7 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#simple
+      # $ darwin-rebuild build --flake .#nAragorn
       darwinConfigurations."nAragorn" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
