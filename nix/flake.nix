@@ -227,7 +227,6 @@
             "omnioutliner"
             "omniplan"
             "only-switch"
-            "parallels-toolbox"
             "plus42-decimal"
             "qmk-toolbox"
             "setapp"
