@@ -51,9 +51,11 @@
         # $ nix-env -qaP | grep wget
         environment.systemPackages = with pkgs;
           [
-            # conda
-            _1password
             # _1password-gui
+            # conda
+            # discord
+            # terraform
+            _1password
             ast-grep
             automake
             bat
@@ -63,7 +65,6 @@
             curl
             deno
             direnv
-            # discord
             docker
             docutils
             espanso
@@ -81,6 +82,7 @@
             hub
             kitty
             lazygit
+            lua
             man
             mkalias
             mosh
@@ -100,20 +102,26 @@
             python312
             python313
             reattach-to-user-namespace
+            ripgrep
+            ruby
+            rust-analyzer
             rustc
+            silver-searcher
             sketchybar
             sphinx
-            # terraform
             tmux
             tree
             universal-ctags
             viu
+            wget
             yarn
             yazi
+            zed
+            zig
+            zip
             zoxide
             zsh
             zsh-syntax-highlighting
-            zed
           ];
 
         homebrew = {
@@ -121,12 +129,15 @@
           taps = [
             "nikitabobko/tap"
             "FelixKratz/formulae"
+            "qmk/qmk"
           ];
           brews = [
             "mas"
             "borders"
             "sketchybar"
             "whalebrew"
+            "qmk"
+            "osx-cross/avr"
           ];
           casks = [
             "font-sketchybar-app-font" # Required for sketchybar
