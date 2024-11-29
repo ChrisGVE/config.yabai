@@ -52,10 +52,6 @@
         environment.systemPackages = with pkgs;
           [
             # _1password-gui
-            # conda
-            # discord
-            # kitty
-            # obsidian
             # terraform
             _1password
             ast-grep
@@ -81,7 +77,6 @@
             go
             httrack
             hub
-            karabiner-elements
             lazygit
             lua
             man
@@ -126,6 +121,7 @@
 
         homebrew = {
           enable = true;
+          whalebrews = [ ];
           taps = [
             "nikitabobko/tap"
             "FelixKratz/formulae"
@@ -137,22 +133,76 @@
             "sketchybar"
             "whalebrew"
             "qmk"
-            "osx-cross/avr"
+            # dependencies for qmk (listed to prevent attempt at uninstalling each time)
+            "hidapi"
+            "xz"
+            "lz4"
+            "zstd"
+            "libusb-compat"
+            "avrdude"
+            "bootloadhid"
+            "clang-format"
+            "dfu-programmer"
+            "dfu-util"
+            "hid_bootloader_cli"
+            "make"
+            "mdloader"
+            "gmp"
+            "isl"
+            "mpfr"
+            "libmpc"
+            "libpng"
+            "freetype"
+            "jpeg-turbo"
+            "libimagequant"
+            "fribidi"
+            "fontconfig"
+            "pcre2"
+            "python-packaging"
+            "mpdecimal"
+            "ca-certificates"
+            "openssl"
+            "readline"
+            "sqlite"
+            "python"
+            "libunistring"
+            "gettext"
+            "glib"
+            "xorgproto"
+            "libxau"
+            "libxdmcp"
+            "libxcb"
+            "libx11"
+            "libxext"
+            "libxrender"
+            "lzo"
+            "pixman"
+            "cairo"
+            "graphite2"
+            "harfbuzz"
+            "libraqm"
+            "libtiff"
+            "little-cms2"
+            "openjpeg"
+            "giflib"
+            "webp"
+            "pillow"
+            "teensy_loader_cli"
           ];
           casks = [
             "1password"
             "adobe-acrobat-reader"
             "aerospace"
             "alfred"
-            "alfred"
-            "blackblaze"
+            "backblaze"
             "calibre"
             "chronosync"
             "daisydisk"
             "devonagent"
             "devonthink"
+            "discord"
             "dropbox"
-            "epic"
+            "epic-games"
             "espanso"
             "firefox"
             "font-sketchybar-app-font" # Required for sketchybar
@@ -162,6 +212,7 @@
             "grammarly-desktop"
             "iterm2"
             "jabra-direct"
+            "karabiner-elements"
             "keyboard-maestro"
             "keycue"
             "kitty"
@@ -176,8 +227,6 @@
             "omnioutliner"
             "omniplan"
             "only-switch"
-            "only-switch"
-            "parallels"
             "parallels-toolbox"
             "plus42-decimal"
             "qmk-toolbox"
@@ -325,7 +374,23 @@
         system.defaults = {
           dock.autohide = true;
           dock.persistent-apps = [
-            # "/System/Applications/Finder.app"
+            "/Applications/Setapp/Path Finder.app"
+            "/System/Applications/Mail.app"
+            "/Applications/Setapp/Spark Mail.app"
+            "/System/Applications/Messages.app"
+            "/Applications/WhatsApp.app"
+            "/System/Applications/System Settings.app"
+            "/Applications/1Password.app"
+            "/Applications/Fantastical.app"
+            "/Applications/OmniFocus.app"
+            "/Applications/Cardhop.app"
+            "/Applications/Safari.app"
+            "/System/Applications/Music.app"
+            "/Applications/Notability.app"
+            "/Applications/kitty.app"
+            "/Applications/Citrix Workspace.app"
+            "/Applications/Obsidian.app"
+            "/Applications/Parallels Desktop.app"
           ];
           loginwindow.GuestEnabled = false;
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
