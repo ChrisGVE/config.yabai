@@ -54,6 +54,8 @@
             # _1password-gui
             # conda
             # discord
+            # kitty
+            # obsidian
             # terraform
             _1password
             ast-grep
@@ -67,7 +69,6 @@
             direnv
             docker
             docutils
-            espanso
             fd
             fzf
             fzy
@@ -80,7 +81,7 @@
             go
             httrack
             hub
-            kitty
+            karabiner-elements
             lazygit
             lua
             man
@@ -89,7 +90,6 @@
             multitail
             neovim
             nodejs_22
-            obsidian
             ocaml
             oh-my-zsh
             opam
@@ -140,12 +140,60 @@
             "osx-cross/avr"
           ];
           casks = [
-            "font-sketchybar-app-font" # Required for sketchybar
+            "1password"
+            "adobe-acrobat-reader"
             "aerospace"
-            "qmk-toolbox"
-            "only-switch"
-            "sf-symbols"
+            "alfred"
+            "alfred"
+            "blackblaze"
+            "calibre"
+            "chronosync"
+            "daisydisk"
+            "devonagent"
+            "devonthink"
+            "dropbox"
+            "epic"
+            "espanso"
+            "firefox"
+            "font-sketchybar-app-font" # Required for sketchybar
+            "fork"
+            "google-chrome"
+            "google-drive"
+            "grammarly-desktop"
+            "iterm2"
+            "jabra-direct"
+            "keyboard-maestro"
+            "keycue"
+            "kitty"
+            "logi-options+"
+            "lulu"
             "miniconda"
+            "moom"
+            "notion"
+            "obsidian"
+            "omnifocus"
+            "omnigraffle"
+            "omnioutliner"
+            "omniplan"
+            "only-switch"
+            "only-switch"
+            "parallels"
+            "parallels-toolbox"
+            "plus42-decimal"
+            "qmk-toolbox"
+            "setapp"
+            "sf-symbols"
+            "snagit"
+            "soundsource"
+            "spamsieve"
+            "steam"
+            "tageditor"
+            "tradingview"
+            "transmission"
+            "transmit"
+            "trezor-suite"
+            "vlc"
+            "zed"
           ];
           masApps = {
             "1Password for Safari" = 1569813296;
