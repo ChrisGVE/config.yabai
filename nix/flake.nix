@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-stable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
@@ -85,9 +86,9 @@
             multitail
             neovim
             nodejs_22
-            ocaml
+            # ocaml
             oh-my-zsh
-            opam
+            # opam
             pandoc
             perl
             pipx
@@ -391,6 +392,7 @@
             "/Applications/Citrix Workspace.app"
             "/Applications/Obsidian.app"
             "/Applications/Parallels Desktop.app"
+            "/System/Applications/iPhone Mirroring.app"
           ];
           loginwindow.GuestEnabled = false;
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
