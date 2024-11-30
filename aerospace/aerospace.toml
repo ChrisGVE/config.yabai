@@ -355,3 +355,7 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.setapp.DesktopClient'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.dreamer.habits-setapp'
+run = 'layout floating'
