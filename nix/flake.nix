@@ -122,6 +122,7 @@
             zsh-completions
             nix-zsh-completions
             zsh-vi-mode
+            broot
           ];
 
         homebrew = {
