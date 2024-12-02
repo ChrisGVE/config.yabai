@@ -69,7 +69,6 @@
             fd
             fzf
             fzy
-            gcc-arm-embedded
             gh
             git
             gitui
@@ -118,6 +117,11 @@
             zoxide
             zsh
             zsh-syntax-highlighting
+            zsh-fast-syntax-highlighting
+            zsh-autosuggestions
+            zsh-completions
+            nix-zsh-completions
+            zsh-vi-mode
           ];
 
         homebrew = {
@@ -127,14 +131,20 @@
             "FelixKratz/formulae"
             "nikitabobko/tap"
             "qmk/qmk"
+            "osx-cross/arm"
+            "osx-cross/avr"
+            "jandedobbeleer/oh-my-posh"
           ];
           brews = [
+            "oh-my-posh"
             "borders"
             "mas"
             "qmk"
             "sketchybar"
             "whalebrew"
             # dependencies for qmk (listed to prevent attempt at uninstalling each time)
+            # "osx-cross/arm/arm-none-eabi-gcc"
+            "osx-cross/avr/avr-gcc"
             "avrdude"
             "bootloadhid"
             "ca-certificates"
@@ -191,6 +201,7 @@
             "zstd"
           ];
           casks = [
+            "alacritty"
             "1password"
             "adobe-acrobat-reader"
             "aerospace"
@@ -244,6 +255,7 @@
             "vlc"
             "wins"
             "zed"
+            "wezterm"
           ];
           masApps = {
             "1Password for Safari" = 1569813296;
@@ -306,6 +318,7 @@
 
         fonts.packages = with pkgs; ([
           sf-mono-liga-bin
+          monaspace
         ]) ++ (
 
           with pkgs.nerd-fonts; [
