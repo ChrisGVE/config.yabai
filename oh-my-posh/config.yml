@@ -45,6 +45,21 @@ blocks:
         background: p:subtext1
         type: os
         style: diamond
+      - type: text
+        leading_diamond: ""
+        powerline_symbol: 
+        template: "{{ if .Env.POSH_VI_MODE }} <b>{{ .Env.POSH_VI_MODE }}</b> {{ end }}"
+        foreground: "red"
+        background: p:surface1
+        style: powerline
+        foreground_templates:
+          [
+            '{{if contains "NORMAL" .Env.POSH_VI_MODE}}p:blue{{end}}',
+            '{{if contains "INSERT" .Env.POSH_VI_MODE}}p:green{{end}}',
+            '{{if contains "VISUAL" .Env.POSH_VI_MODE}}p:mauve{{end}}',
+            '{{if contains "V-LINE" .Env.POSH_VI_MODE}}p:mauve{{end}}',
+            '{{if contains "REPLACE" .Env.POSH_VI_MODE}}p:red{{end}}',
+          ]
       - properties:
           folder_icon: ....
           home_icon: "~"
@@ -54,7 +69,15 @@ blocks:
         template: " {{ .Path }} "
         foreground: p:text
         powerline_symbol: 
-        background: p:blue
+        background_templates:
+          [
+            "{{if .Env.POSH_VI_MODE }}{{else}}p:blue{{end}}",
+            '{{if contains "NORMAL" .Env.POSH_VI_MODE}}p:blue{{end}}',
+            '{{if contains "INSERT" .Env.POSH_VI_MODE}}p:green{{end}}',
+            '{{if contains "VISUAL" .Env.POSH_VI_MODE}}p:mauve{{end}}',
+            '{{if contains "V-LINE" .Env.POSH_VI_MODE}}p:mauve{{end}}',
+            '{{if contains "REPLACE" .Env.POSH_VI_MODE}}p:red{{end}}',
+          ]
         type: path
         style: powerline
       - properties:
@@ -71,7 +94,7 @@ blocks:
         template: " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
         foreground: p:text
         powerline_symbol: 
-        background: p:green
+        background: p:teal
         type: git
         style: powerline
         background_templates:
@@ -106,7 +129,15 @@ blocks:
         style: diamond
         leading_diamond: 
         foreground: p:text
-        background: p:blue
+        background_templates:
+          [
+            "{{if .Env.POSH_VI_MODE }}{{else}}p:blue{{end}}",
+            '{{if contains "NORMAL" .Env.POSH_VI_MODE}}p:blue{{end}}',
+            '{{if contains "INSERT" .Env.POSH_VI_MODE}}p:green{{end}}',
+            '{{if contains "VISUAL" .Env.POSH_VI_MODE}}p:mauve{{end}}',
+            '{{if contains "V-LINE" .Env.POSH_VI_MODE}}p:mauve{{end}}',
+            '{{if contains "REPLACE" .Env.POSH_VI_MODE}}p:red{{end}}',
+          ]
         template: " {{ if .Venv }}{{ .Venv }}{{ end }}  "
         properties:
           home_enabled: true
