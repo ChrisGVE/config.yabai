@@ -3,10 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-stable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     # Optional: Declarative tap management
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
@@ -47,6 +48,7 @@
       configuration = { pkgs, config, ... }: {
 
         nixpkgs.config.allowUnfree = true;
+        nixpkgs.config.allowBroken = true;
 
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
@@ -54,12 +56,25 @@
           [
             # _1password-gui
             # terraform
-            _1password
+            # ocaml
+            # opam
+            _1password-cli
+            alacritty
             ast-grep
             automake
             bat
+            bat-extras.batgrep
+            bat-extras.batman
+            bat-extras.batpipe
+            bat-extras.batwatch
+            bat-extras.batdiff
+            bat-extras.prettybat
+            black
+            jankyborders
+            broot
             btop
             cargo
+            libclang
             cmake
             curl
             deno
@@ -80,18 +95,21 @@
             lazygit
             lua
             man
+            mas
             mkalias
             mosh
             multitail
             neovim
+            nix-zsh-completions
             nodejs_22
-            # ocaml
+            oh-my-posh
             oh-my-zsh
-            # opam
             pandoc
             perl
             pipx
             pnpm
+            nodePackages.prettier
+            prettierd
             pyenv
             python311
             python312
@@ -101,6 +119,8 @@
             ruby
             rust-analyzer
             rustc
+            rustfmt
+            shfmt
             silver-searcher
             sketchybar
             sphinx
@@ -111,130 +131,65 @@
             wget
             yarn
             yazi
-            zed
+            yq
             zig
             zip
             zoxide
             zsh
-            zsh-syntax-highlighting
-            zsh-fast-syntax-highlighting
             zsh-autosuggestions
             zsh-completions
-            nix-zsh-completions
+            zsh-fast-syntax-highlighting
+            zsh-syntax-highlighting
             zsh-vi-mode
-            broot
+            sketchybar
+            aerospace
+            espanso
+            sketchybar-app-font
+            google-chrome
+            iterm2
+            karabiner-elements
+            kitty
+            obsidian
+            qmk
+            soundsource
+            transmission_4
+            vlc-bin-universal
+            zed-editor
+            wezterm
           ];
 
         homebrew = {
           enable = true;
           whalebrews = [ ];
           taps = [
-            "FelixKratz/formulae"
-            "nikitabobko/tap"
-            "qmk/qmk"
-            "osx-cross/arm"
-            "osx-cross/avr"
-            "jandedobbeleer/oh-my-posh"
           ];
           brews = [
-            "oh-my-posh"
-            "borders"
-            "mas"
-            "qmk"
-            "sketchybar"
-            "whalebrew"
-            # dependencies for qmk (listed to prevent attempt at uninstalling each time)
-            # "osx-cross/arm/arm-none-eabi-gcc"
-            "osx-cross/avr/avr-gcc"
-            "avrdude"
-            "bootloadhid"
-            "ca-certificates"
-            "cairo"
-            "clang-format"
-            "dfu-programmer"
-            "dfu-util"
-            "fontconfig"
-            "freetype"
-            "fribidi"
-            "gettext"
-            "giflib"
-            "glib"
-            "gmp"
-            "graphite2"
-            "harfbuzz"
-            "hid_bootloader_cli"
-            "hidapi"
-            "isl"
-            "jpeg-turbo"
-            "libimagequant"
-            "libmpc"
-            "libpng"
-            "libraqm"
-            "libtiff"
-            "libunistring"
-            "libusb-compat"
-            "libx11"
-            "libxau"
-            "libxcb"
-            "libxdmcp"
-            "libxext"
-            "libxrender"
-            "little-cms2"
-            "lz4"
-            "lzo"
-            "make"
-            "mdloader"
-            "mpdecimal"
-            "mpfr"
-            "openjpeg"
-            "openssl"
-            "pcre2"
-            "pillow"
-            "pixman"
-            "python"
-            "python-packaging"
-            "readline"
-            "sqlite"
-            "teensy_loader_cli"
-            "webp"
-            "xorgproto"
-            "xz"
-            "zstd"
           ];
           casks = [
-            "alacritty"
+            "calibre"
+            "firefox"
             "1password"
             "adobe-acrobat-reader"
-            "aerospace"
+            "discord"
             "alfred"
             "backblaze"
-            "calibre"
             "chronosync"
             "daisydisk"
             "devonagent"
             "devonthink"
-            "discord"
             "dropbox"
             "epic-games"
-            "espanso"
-            "firefox"
-            "font-sketchybar-app-font" # Required for sketchybar
             "fork"
-            "google-chrome"
             "google-drive"
             "grammarly-desktop"
-            "iterm2"
             "jabra-direct"
-            "karabiner-elements"
             "keyboard-maestro"
             "keycue"
-            "kitty"
             "logi-options+"
             "lulu"
             "miniconda"
             "moom"
             "notion"
-            "obsidian"
             "omnifocus"
             "omnigraffle"
             "omnioutliner"
@@ -245,18 +200,13 @@
             "setapp"
             "sf-symbols"
             "snagit"
-            "soundsource"
             "spamsieve"
             "steam"
             "tageditor"
             "tradingview"
-            "transmission"
             "transmit"
             "trezor-suite"
-            "vlc"
             "wins"
-            "zed"
-            "wezterm"
           ];
           masApps = {
             "1Password for Safari" = 1569813296;
@@ -392,6 +342,7 @@
             "/Applications/Setapp/Path Finder.app"
             "/System/Applications/Mail.app"
             "/Applications/Setapp/Spark Mail.app"
+            "/Applications/Safari.app"
             "/System/Applications/Messages.app"
             "/Applications/WhatsApp.app"
             "/System/Applications/System Settings.app"
@@ -399,13 +350,14 @@
             "/Applications/Fantastical.app"
             "/Applications/OmniFocus.app"
             "/Applications/Cardhop.app"
-            "/Applications/Safari.app"
             "/System/Applications/Music.app"
             "/Applications/Notability.app"
+            "/Applications/Nix Apps/kitty.app"
             "/Applications/kitty.app"
             "/Applications/Citrix Workspace.app"
-            "/Applications/Obsidian.app"
+            "/Applications/Nix Apps/Obsidian.app"
             "/Applications/Parallels Desktop.app"
+            "/Applications/Transmission.app"
             "/System/Applications/iPhone Mirroring.app"
           ];
           loginwindow.GuestEnabled = false;
