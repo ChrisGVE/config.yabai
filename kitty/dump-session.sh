@@ -6,8 +6,8 @@ set -eou pipefail
 
 kitty @ ls | $HOME/.config/kitty/kitty-convert-dump.py >$HOME/.local/state/kitty/autosave-session.conf
 
-echo "kitty session dumped"
-
-echo
-read -r -p "Press Enter to exit"
-echo ""
+# echo "kitty session dumped"
+#
+# echo
+# read -r -p "Press Enter to exit"
+# echo ""
