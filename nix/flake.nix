@@ -59,28 +59,28 @@
             # ocaml
             # opam
             _1password-cli
+            # aerospace
             alacritty
             ast-grep
             automake
             bat
+            bat-extras.batdiff
             bat-extras.batgrep
             bat-extras.batman
             bat-extras.batpipe
             bat-extras.batwatch
-            bat-extras.batdiff
             bat-extras.prettybat
             black
-            jankyborders
             broot
             btop
             cargo
-            libclang
             cmake
             curl
             deno
             direnv
             docker
             docutils
+            espanso
             fd
             fzf
             fzy
@@ -90,9 +90,15 @@
             glow
             gnused
             go
+            google-chrome
             httrack
             hub
+            iterm2
+            jankyborders
+            karabiner-elements
+            kitty
             lazygit
+            libclang
             lua
             man
             mas
@@ -101,19 +107,21 @@
             multitail
             neovim
             nix-zsh-completions
+            nodePackages.prettier
             nodejs_22
+            obsidian
             oh-my-posh
             oh-my-zsh
             pandoc
             perl
             pipx
             pnpm
-            nodePackages.prettier
             prettierd
             pyenv
             python311
             python312
             python313
+            qmk
             reattach-to-user-namespace
             ripgrep
             ruby
@@ -122,16 +130,22 @@
             rustfmt
             shfmt
             silver-searcher
-            sketchybar
+            # sketchybar
+            # sketchybar-app-font
+            soundsource
             sphinx
             tmux
+            transmission_4
             tree
             universal-ctags
             viu
+            vlc-bin-universal
+            wezterm
             wget
             yarn
             yazi
             yq
+            zed-editor
             zig
             zip
             zoxide
@@ -141,21 +155,7 @@
             zsh-fast-syntax-highlighting
             zsh-syntax-highlighting
             zsh-vi-mode
-            sketchybar
-            aerospace
-            espanso
-            sketchybar-app-font
-            google-chrome
-            iterm2
-            karabiner-elements
-            kitty
-            obsidian
-            qmk
-            soundsource
-            transmission_4
-            vlc-bin-universal
-            zed-editor
-            wezterm
+            yabai
           ];
 
         homebrew = {
@@ -269,34 +269,31 @@
 
         fonts.packages = with pkgs; ([
           sf-mono-liga-bin
-          monaspace
-        ]) ++ (
-
-          with pkgs.nerd-fonts; [
-            bigblue-terminal
-            caskaydia-cove
-            caskaydia-mono
-            comic-shanns-mono
-            dejavu-sans-mono
-            envy-code-r
-            fira-code
-            fira-mono
-            hack
-            im-writing
-            inconsolata
-            inconsolata-go
-            iosevka
-            iosevka-term
-            iosevka-term-slab
-            jetbrains-mono
-            lilex
-            meslo-lg
-            open-dyslexic
-            sauce-code-pro
-            symbols-only
-            victor-mono
-            zed-mono
-          ]
+          nerd-fonts.monaspace
+          nerd-fonts.bigblue-terminal
+          nerd-fonts.caskaydia-cove
+          nerd-fonts.caskaydia-mono
+          nerd-fonts.comic-shanns-mono
+          nerd-fonts.dejavu-sans-mono
+          nerd-fonts.envy-code-r
+          nerd-fonts.fira-code
+          nerd-fonts.fira-mono
+          nerd-fonts.hack
+          nerd-fonts.im-writing
+          nerd-fonts.inconsolata
+          nerd-fonts.inconsolata-go
+          nerd-fonts.iosevka
+          nerd-fonts.iosevka-term
+          nerd-fonts.iosevka-term-slab
+          nerd-fonts.jetbrains-mono
+          nerd-fonts.lilex
+          nerd-fonts.meslo-lg
+          nerd-fonts.open-dyslexic
+          nerd-fonts.sauce-code-pro
+          nerd-fonts.symbols-only
+          nerd-fonts.victor-mono
+          nerd-fonts.zed-mono
+        ]
         );
 
         nixpkgs.overlays =
@@ -340,9 +337,10 @@
           dock.autohide = true;
           dock.persistent-apps = [
             "/Applications/Setapp/Path Finder.app"
+            "/Applications/Safari.app"
+            "/Applications/Nix Apps/Google Chrome.app"
             "/System/Applications/Mail.app"
             "/Applications/Setapp/Spark Mail.app"
-            "/Applications/Safari.app"
             "/System/Applications/Messages.app"
             "/Applications/WhatsApp.app"
             "/System/Applications/System Settings.app"
