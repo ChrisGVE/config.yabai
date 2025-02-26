@@ -66,13 +66,13 @@ yabai -m rule --add label="Discord" app="^Discord$" manage=off
 yabai -m rule --add label="Disk Utility" app="^Disk Utility$" manage=off
 yabai -m rule --add label="Docker Desktop" app="^Docker Desktop$" manage=off
 yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
+yabai -m rule --add label="Fantastical" app="^Fantastical$" manage=off
 yabai -m rule --add label="Find My" app="^Find My$" manage=off
 yabai -m rule --add label="Finder" app='^Finder$' manage=off
 yabai -m rule --add label="Folder Marker" app="^FolderMarker$" manage=off
 yabai -m rule --add label="Font Book" app="^Font Book$" manage=off
 yabai -m rule --add label="Habits" app="^Habits$" manage=off
 yabai -m rule --add label="Ice" app="^Ice$" manage=off
-yabai -m rule --add label="iStat Menus" app="^iStat Menus$" manage=off
 yabai -m rule --add label="Karabiner-Elements" app="^Karabiner-Elements$" manage=off
 yabai -m rule --add label="Karabiner-EventViewer" app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add label="Keyboard Maestro" app="^Keyboard Maestro$" manage=off
@@ -80,6 +80,7 @@ yabai -m rule --add label="LuLu" app="^LuLu$" manage=off
 yabai -m rule --add label="Mail" app="^Mail$" manage=off
 yabai -m rule --add label="Messages" app="^Messages$" manage=off
 yabai -m rule --add label="Notes" app="^Notes$" manage=off
+yabai -m rule --add label="Numbers" app="^Numbers$" manage=off
 yabai -m rule --add label="OnlySwitch" app="^OnlySwitch$" manage=off
 yabai -m rule --add label="PCalc" app="^PCalc$" manage=off
 yabai -m rule --add label="Parallels Desktop" app="^Parallels Desktop$" manage=off
@@ -101,7 +102,7 @@ yabai -m rule --add label="TradingView" app='^TradingView$' manage=off
 yabai -m rule --add label="Transmission" app='^Transmission$' manage=off
 yabai -m rule --add label="VLC" app="^VLC$" manage=off
 yabai -m rule --add label="WhatsApp" app="WhatsApp" title="WhatsApp" manage=off
-yabai -m rule --add label="Numbers" app="^Numbers$" manage=off
+yabai -m rule --add label="iStat Menus" app="^iStat Menus$" manage=off
 yabai -m rule --add app=".*" sub-layer=normal
 yabai -m rule --apply
 
