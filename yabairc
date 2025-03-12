@@ -57,6 +57,7 @@ yabai -m rule --add label="CitrixV" app='^Citrix Viewer$' manage=off
 yabai -m rule --add label="CitrixWS" app='^Citrix Workspace$' manage=off
 yabai -m rule --add label="CleanMyMac" app="^CleanMyMac$" manage=off
 yabai -m rule --add label="Coin Stats" app="^Coin Stats$" manage=off
+yabai -m rule --add label="Collections" app="^Collections$" manage=off
 yabai -m rule --add label="Console" app="^Console$" manage=off
 yabai -m rule --add label="Contacts" app="^Contacts$" manage=off
 yabai -m rule --add label="DEVONagent Pro" app="^DEVONagent Pro$" manage=off
