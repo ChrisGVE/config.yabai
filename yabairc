@@ -105,6 +105,7 @@ yabai -m rule --add label="VLC" app="^VLC$" manage=off
 yabai -m rule --add label="WhatsApp" app="WhatsApp" title="WhatsApp" manage=off
 yabai -m rule --add label="iStat Menus" app="^iStat Menus$" manage=off
 yabai -m rule --add label="Claude" app="^Claude$" manage=off
+yabai -m rule --add label="Moom" app="^Moom" manage=off
 yabai -m rule --add app=".*" sub-layer=normal
 yabai -m rule --apply
 
